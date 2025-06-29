@@ -89,6 +89,7 @@ void sendDeauth(Mac bssid) {
 }
 
 void insertCSA(uint8_t *buf, unsigned int *len, int newChannel, uint8_t switchCount) {
+	// CSA usually come after DS param(not necessary) so we find DS pos then insert it after, simple as that
 	unsigned int pos = 36;
 	int insertPos = -1;
 
